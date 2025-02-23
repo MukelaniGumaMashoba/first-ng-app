@@ -9,4 +9,7 @@ import { GreetingComponent } from '../components/greeting/greeting.component';
 })
 export class HomeComponent {
  message = signal('Welcome to the home page!');
+ keyUpHnadler(event: KeyboardEvent) {
+   console.log(`Key ${event.key} event was triggered`);
+ }
 }
