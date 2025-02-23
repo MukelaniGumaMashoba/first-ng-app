@@ -1,14 +1,15 @@
 
 <h1>ToDos</h1>
 
-<p *ngIf="todoItems().length">Loading...</p>
+<!-- <p *ngIf="!todoItems().length">Loading...</p> -->
+
+@if (!todoItems().length) {
+    <p>Loading...</p>
+}
 
 <ul>
     @for (todo of todoItems(); track todo.id) {
-   <li class="todo-item">
-        <input id="todo-{{todo.id}}" type="checkbox" [value]="todo.completed">
-        <label for="todo-{{todo.userId}}">{{ todo.title }}</label>
-   </li>
+        <app-todo-item (todoToggled)="updateTodo($event)" [todo]="todo"></app-todo-item>
 }
 
 </ul>
