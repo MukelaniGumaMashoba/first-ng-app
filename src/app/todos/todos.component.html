@@ -7,8 +7,17 @@
     <p>Loading...</p>
 }
 
+<label>Show completed</label>
+<input 
+    [(ngModel)]="searchTerm"
+    type="text"
+    placeholder="Search..." 
+    name="searchTerm"
+    />
+ 
+
 <ul>
-    @for (todo of todoItems(); track todo.id) {
+    @for (todo of todoItems() | filterTodos : searchTerm(); track todo.id) {
         <app-todo-item (todoToggled)="updateTodo($event)" [todo]="todo"></app-todo-item>
 }
 
