@@ -1,5 +1,18 @@
-<p>home works!</p>
+<p class="firstP">Welcome To ESMS</p>
+
+<div class="home">
+    <app-greeting [message]="content()" />
+
+    <div>
+        <img src="assets/images/1.jpg" alt="image" />
+    </div>
+    <p>
+        One commit a day keeps the bugs away
+    </p>
+</div>
 <app-greeting [message]="message()" />
 <!-- <app-counter [counter]="counter" (counterChange)="counterChange($event)" /> -->
  <app-counter />
-<input type="text" (keyup)="keyUpHnadler($event)" placeholder="type anything" />
+
+ <app-footer />
+<!-- <input type="text" (keyup)="keyUpHnadler($event)" placeholder="type anything" /> -->
